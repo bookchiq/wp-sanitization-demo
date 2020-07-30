@@ -5,7 +5,7 @@
  * Author:          Yoko Co
  * Author URI:      https://www.yokoco.com/
  * Text Domain:     yoko-wp-sanitization-demo
- * Version:         0.1
+ * Version:         0.1.1
  * License:         GPL3
  *
  * WP Sanitization Demo is free software: you can redistribute it and/or modify
@@ -110,6 +110,7 @@ class YokoWPSanitizationDemo {
 		add_shortcode( 'wp-sanitization-demo', array( $this, 'display_form' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_front_end_scripts' ) );
 		add_action( 'wp_ajax_wp_sanitization_demo_update', array( $this, 'go_sanitize' ) );
+		add_action( 'wp_ajax_nopriv_wp_sanitization_demo_update', array( $this, 'go_sanitize' ) );
 	}
 
 	/**
@@ -209,6 +210,11 @@ class YokoWPSanitizationDemo {
 		return $out;
 	}
 
+	/**
+	 * Take the input, run it through the requested function, and return the results.
+	 *
+	 * @return mixed The sanitized result.
+	 */
 	public function go_sanitize() {
 		$nonce_check = check_ajax_referer( 'wp-sanitization-demo' );
 		if ( false === $nonce_check ) {
