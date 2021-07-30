@@ -84,8 +84,7 @@ class YokoWPSanitizationDemo {
 		'sanitize_user',
 		'intval',
 		'absint',
-		'wp_filter_post_kses',
-		'wp_filter_nohtml_kses',
+		'wp_kses_post',
 		'ent2ncr',
 		'wp_rel_nofollow',
 		'esc_html',
@@ -175,8 +174,7 @@ class YokoWPSanitizationDemo {
 
 		$out .= '	<tr class="category"><th colspan="2">HTML/XML</th></tr>' . PHP_EOL;
 		$out .= '	<tr class="sanitize_email"><th class="header-function-name">Function</th><th class="header-result">Result</th></tr>' . PHP_EOL;
-		$out .= '	<tr class="wp_filter_post_kses"><td class="function-name"><a href="https://developer.wordpress.org/reference/functions/wp_filter_post_kses/">wp_filter_post_kses()</a></td><td class="result"></td></tr>' . PHP_EOL;
-		$out .= '	<tr class="wp_filter_nohtml_kses"><td class="function-name"><a href="https://developer.wordpress.org/reference/functions/wp_filter_nohtml_kses/">wp_filter_nohtml_kses()</a></td><td class="result"></td></tr>' . PHP_EOL;
+		$out .= '	<tr class="wp_kses_post"><td class="function-name"><a href="https://developer.wordpress.org/reference/functions/wp_kses_post/">wp_kses_post()</a></td><td class="result"></td></tr>' . PHP_EOL;
 		$out .= '	<tr class="ent2ncr"><td class="function-name"><a href="https://developer.wordpress.org/reference/functions/ent2ncr/">ent2ncr()</a></td><td class="result"></td></tr>' . PHP_EOL;
 		$out .= '	<tr class="wp_rel_nofollow"><td class="function-name"><a href="https://developer.wordpress.org/reference/functions/wp_rel_nofollow/">wp_rel_nofollow()</a></td><td class="result"></td></tr>' . PHP_EOL;
 		$out .= '	<tr class="esc_html"><td class="function-name"><a href="https://developer.wordpress.org/reference/functions/esc_html/">esc_html()</a></td><td class="result"></td></tr>' . PHP_EOL;
